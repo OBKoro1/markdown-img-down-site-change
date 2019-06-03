@@ -1,11 +1,11 @@
 /*
- * @Github: https://github.com/OBKoro1
+ * @Github: https://github.com/OBKoro1/markdown-img-down-site-change
  * @Author: OBKoro1
  * @Created_time: 2019-05-28 17:21:41
  * @LastEditors: OBKoro1
- * @LastEditTime: 2019-06-03 10:50:50
- * @Description: 读取markdown地址，更改他们的url。
- * 建议将项目备份一下，以免操作失误导致数据丢失
+ * @LastEditTime: 2019-06-03 15:11:48
+ * @Description: 查找指定文件夹的所有markdown文件。
+ * 根据参数找出要所有要替换的图片，下载所有图片，替换图片的地址。
  */
 
 const util = require('./util')
@@ -32,12 +32,18 @@ class markdownImageDown {
             new_image_url: 'https://xxx.com/目录地址/', // 图片上传的地址
             add_end: '', // 在图片名字后面添加后缀添加后缀
             read_markdown_src: './source', // 要查找markdown文件的文件夹地址
-            down_img_src: './markdown_img_src', // 下载项目的地址
+            down_img_src: './markdown_img_src', // 图片下载到这个文件夹下面
             copy_item_data: 'copy_item_obkoro', // 默认备份项目 防止项目数据损坏
             filter_item: ['.git'], // 过滤某些文件夹 不去查找markdown
         }
         this.imgList = [] // 查找的img
         this.option = Object.assign(defaultOption, option) // 配置参数
+        if (this.option.copy_item_data) {
+            // 异步复制
+            this.copyDir(this.option.read_markdown_src, this.option.copy_item_data, (err) => {
+                console.log('复制文件夹报错：', err)
+            });
+        }
     }
     /**
      * 根据类型 开始操作
@@ -47,12 +53,6 @@ class markdownImageDown {
     begin(type = 'down') {
         if (!util.checkDataAction('String', type, 'begin type 必须为字符串')) return
         this.type = type
-        if (this.option.copy_item_data) {
-            // 异步复制
-            this.copyDir(this.option.read_markdown_src, this.option.copy_item_data, (err) => {
-                console.log('复制文件夹报错：', err)
-            });
-        }
 
         if (type === 'down') {
             this.readFile(this.option.read_markdown_src)

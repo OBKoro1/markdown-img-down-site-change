@@ -1,4 +1,14 @@
-const markdownImageDown = require('markdown-image-upload-change'); // 文件模块
+/*
+ * @Github: https://github.com/OBKoro1/markdown-img-down-site-change
+ * @Author: OBKoro1
+ * @Created_time: 2019-05-31 16:05:19
+ * @LastEditors: OBKoro1
+ * @LastEditTime: 2019-06-03 11:09:33
+ * @Description: 查找指定文件夹的所有markdown文件。
+ * 根据参数找出要所有要替换的图片，下载所有图片，替换图片的地址。
+ */
+// npm i markdown-img-down-site-change -S 
+const markdownImageDown = require('markdown-img-down-site-change'); // 文件模块
 
 // 传参： 这也是脚本的默认参数，根据情况可以自行修改
 let option = {

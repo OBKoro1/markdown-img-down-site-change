@@ -1,7 +1,7 @@
 {
   "name": "markdown-img-down-site-change",
-  "version": "1.0.5",
-  "description": "工具为了markdown 图片外链失效而开发的，搜索目标文件夹中的markdown文件，找到目标图片，提供下载，替换链接的功能",
+  "version": "1.0.7",
+  "description": "搜索目标文件夹中的markdown文件，找到目标图片，提供下载，替换链接的功能-通常用于markdown 图片失效",
   "main": "./src/main.js",
   "homepage": "https://github.com/OBKoro1/markdown-img-down-site-change",
   "scripts": {

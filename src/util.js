@@ -1,3 +1,12 @@
+/*
+ * @Github: https://github.com/OBKoro1
+ * @Author: OBKoro1
+ * @Created_time: 2019-05-31 14:39:31
+ * @LastEditors: OBKoro1
+ * @LastEditTime: 2019-06-03 11:09:54
+ * @Description: 公共函数
+ */
+
 // 检查数据格式
 const checkData = (type, data) => {
     if (!type || !data) return false;
