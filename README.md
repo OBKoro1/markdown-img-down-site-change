@@ -15,14 +15,14 @@
 // ![](https://user-gold-cdn.xitu.io/2019/5/20/图片名字?w=2024&h=1240&f=png&s=339262)
 // ![](https://user-gold-cdn.xitu.io/2018/6/16/图片名字)
 // 2. 替换成：github的链接
-![](https://raw.githubusercontent.com/OBKoro1/articleImg_src/master/juejin/图片名字?w=2024&h=1240&f=png&s=339262)
 ![](https://raw.githubusercontent.com/OBKoro1/articleImg_src/master/juejin/图片名字)
+// 由于github的参数限制，带了参数就不能正常显示图片 所有这里默认取图片名前部分的：字母或数字或下划线或汉字
 ```
 
 ### 安装:
 
 ```js
-npm i markdown-img-down-site-change -S
+npm i markdown-img-down-site-change
 ```
 
 ### 文档：
@@ -43,6 +43,18 @@ npm i markdown-img-down-site-change -S
 2. 默认开启[测试模式](https://github.com/OBKoro1/markdown-img-down-site-change/wiki/API#test%E6%98%AF%E5%90%A6%E5%BC%80%E5%90%AF%E6%B5%8B%E8%AF%95%E6%A8%A1%E5%BC%8F)，等到调试的差不多了，可以关闭测试模式。
 3. 建议：再不放心的话，可以先用一两个文件来测试一下脚本
 
+### 插件使用姿势：
+
+我是这样使用的，大家可以做个参考：
+
+1. 新建一个[github项目](https://github.com/OBKoro1/articleImg_src),专门用于存放图片资源
+2. `npm init`初始化`package.json` 文件，下载npm包:`npm i markdown-img-down-site-change`,
+3. 新建一个`handleImg.js`文件，参考:[example.js](https://github.com/OBKoro1/markdown-img-down-site-change/blob/master/example.js)
+4. 拷贝你的`markdown`文件夹到该项目，执行`node handleImg.js`
+5. 将会搜索所有`.md`文件，下载匹配到的图片到项目的根目录。
+6. 默认不修改文件,默认开启备份，匹配规则、过滤某些文件夹等更多配置信息参阅：[API文档](https://github.com/OBKoro1/markdown-img-down-site-change/wiki/API)
+
+比如我的github图床：[articleImg_src](https://github.com/OBKoro1/articleImg_src)
 
 ### 使用：20行代码不到
 
