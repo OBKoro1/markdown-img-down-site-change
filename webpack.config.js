@@ -3,14 +3,18 @@
  * @Author: OBKoro1
  * @Date: 2019-07-09 20:35:45
  * @LastEditors: OBKoro1
- * @LastEditTime: 2019-07-10 20:57:44
+ * @LastEditTime: 2019-07-11 20:55:41
  * @Description: webpack 打包配置
  */
 const path = require('path');
 
 module.exports = {
+    target: 'node', // 声明环境解决：window is not defined
     output: {
-        globalObject: 'this', // 定义全局变量,兼容node和浏览器运行，避免出现"window is not defined"的情况
+        path: path.resolve(__dirname, 'dist'),
+        filename: 'main.js',
+        globalObject: 'this', // 添加这个选项
+        libraryTarget: 'umd'
     },
     node: {
         fs: 'empty',

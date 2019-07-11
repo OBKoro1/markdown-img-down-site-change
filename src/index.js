@@ -3,15 +3,15 @@
  * @Author: OBKoro1
  * @Created_time: 2019-05-28 17:21:41
  * @LastEditors: OBKoro1
- * @LastEditTime: 2019-07-09 21:08:16
+ * @LastEditTime: 2019-07-11 20:24:14
  * @Description: 查找指定文件夹的所有markdown文件。
  * 根据参数找出要所有要替换的图片，下载所有图片，替换图片的地址。
  */
 
 const util = require('./util')
 const fs = require('fs'); // 文件模块
-var request = require('request');
-var async = require("async");
+const request = require('request');
+const async = require("async");
 
 class markdownImageDown {
     /**
